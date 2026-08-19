@@ -1,13 +1,21 @@
+import { preload } from "react-dom";
+
 import { assetPath } from "@/shared/lib";
 
+const HERO_IMAGE_SRC = assetPath("/images/hero.jpg");
+
 export function CatalogHero() {
+  preload(HERO_IMAGE_SRC, { as: "image", fetchPriority: "high" });
+
   return (
     <section className="relative isolate overflow-hidden bg-hero text-white">
-      <div
-        className="absolute inset-0 -z-20 bg-cover bg-[68%_center] bg-no-repeat sm:bg-center"
-        style={{ backgroundImage: `url(${assetPath("/images/hero.jpg")})` }}
-        role="img"
-        aria-label="Туристский поезд среди лесов России"
+      <img
+        src={HERO_IMAGE_SRC}
+        alt="Туристский поезд среди лесов России"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[68%_center] sm:object-center"
       />
       <div
         className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-[#101b26]/72 via-[#142431]/32 to-transparent"

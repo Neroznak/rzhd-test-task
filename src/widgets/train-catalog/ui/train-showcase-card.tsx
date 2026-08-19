@@ -31,14 +31,13 @@ export function TrainShowcaseCard({
       >
         <span className="relative block aspect-[16/10.5] w-full overflow-hidden bg-[#d9dde3]">
           {image ? (
-            <span
-              role="img"
-              aria-label={image.alt}
-              className="absolute inset-0 bg-cover bg-no-repeat transition-transform duration-500 group-hover:scale-[1.025]"
-              style={{
-                backgroundImage: `url(${image.src})`,
-                backgroundPosition: image.cardPosition,
-              }}
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+              style={{ objectPosition: image.cardPosition }}
             />
           ) : (
             <>
