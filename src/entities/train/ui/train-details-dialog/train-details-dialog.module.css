@@ -193,6 +193,14 @@
   outline-offset: 3px;
 }
 
+.body {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .content {
   display: grid;
   min-height: 0;
@@ -691,8 +699,16 @@
   }
 
   .content {
-    max-height: calc(94dvh - 205px);
+    max-height: none;
+    overflow: visible;
+    flex: 0 0 auto;
     padding: 22px 20px 28px;
+  }
+
+  .body {
+    overflow-y: auto;
+    scrollbar-color: #c3c8d0 transparent;
+    scrollbar-width: thin;
   }
 
   .monthNavigation {

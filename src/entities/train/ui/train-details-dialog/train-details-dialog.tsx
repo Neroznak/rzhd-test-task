@@ -351,8 +351,9 @@ export function TrainDetailsDialog({
           </p>
         </header>
 
-        <div className={styles.content}>
-          <section className={styles.routePanel} aria-labelledby={`${titleId}-route`}>
+        <div className={styles.body}>
+          <div className={styles.content}>
+            <section className={styles.routePanel} aria-labelledby={`${titleId}-route`}>
             <h3 id={`${titleId}-route`}>Маршрут</h3>
             {train.route.length > 0 ? (
               <ol className={styles.routeList} aria-label="Полный маршрут поезда">
@@ -414,6 +415,7 @@ export function TrainDetailsDialog({
             <span className={styles.unavailableButton}>Продажа пока недоступна</span>
           )}
         </footer>
+        </div>
       </div>
     </div>
   );
