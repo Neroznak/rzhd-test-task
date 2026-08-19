@@ -1,9 +1,11 @@
+import { assetPath } from "@/shared/lib";
+
 export function CatalogHero() {
   return (
     <section className="relative isolate overflow-hidden bg-hero text-white">
       <div
         className="absolute inset-0 -z-20 bg-cover bg-[68%_center] bg-no-repeat sm:bg-center"
-        style={{ backgroundImage: "url(/images/hero.jpg)" }}
+        style={{ backgroundImage: `url(${assetPath("/images/hero.jpg")})` }}
         role="img"
         aria-label="Туристский поезд среди лесов России"
       />

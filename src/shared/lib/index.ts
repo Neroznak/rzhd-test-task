@@ -1,2 +1,1 @@
-// Public API for reusable, domain-agnostic utilities.
-export {};
+export { assetPath } from "./asset-path";
